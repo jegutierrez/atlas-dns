@@ -1,5 +1,4 @@
-# atlas-dns
-Drone Navigation Service (DNS) - Atlas corp
+# Drone Navigation Service (DNS) - Atlas corp
 ---
 DNS helps robots to locate databank to upload gathered data from space exploration.
 
