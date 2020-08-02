@@ -36,7 +36,9 @@ DNS helps robots to locate databank to upload gathered data from space explorati
 ## JSON API:
 #### Get nearest databank location
 
-* POST: /calculate-databank-location
+```bash
+POST: /calculate-databank-location
+```
 
 Request body example (content-type: application/json):
 ```json
@@ -57,7 +59,9 @@ Response example (content-type: application/json):
 
 #### Ping health check request
 
-* GET: /ping
+```bash
+GET: /ping
+```
 
 Response example (content-type: text/plain):
 ```json
