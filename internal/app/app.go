@@ -28,7 +28,7 @@ var ErrInvalidLogLevel = errors.New("invalid level provided")
 
 // NewApp instantiate the appropiate config and load the corresponding app container.
 func NewApp() (*App, error) {
-	env := os.Getenv("DSN_ENVIRONMENT")
+	env := os.Getenv("DNS_ENVIRONMENT")
 	log.Infof("app running on environment: %s", env)
 
 	var config *Config

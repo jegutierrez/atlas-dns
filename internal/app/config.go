@@ -34,12 +34,12 @@ func NewLocalConfig() (*Config, error) {
 
 // NewProductionConfig loads the config to run the app into docker container.
 func NewProductionConfig() (*Config, error) {
-	logLevel := os.Getenv("DSN_LOG_LEVEL")
+	logLevel := os.Getenv("DNS_LOG_LEVEL")
 	if logLevel == "" {
 		logLevel = log.WarnLevel.String()
 	}
 
-	sectorID := os.Getenv("DSN_SECTOR_ID")
+	sectorID := os.Getenv("DNS_SECTOR_ID")
 	if sectorID == "" {
 		return nil, ErrMissingSectorID
 	}

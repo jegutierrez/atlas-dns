@@ -13,12 +13,19 @@ COPY go.sum .
 RUN go mod download
 
 COPY . .
-RUN go build -o main .
+RUN go build -o dns "./cmd/server"
 WORKDIR /dist
 
-RUN cp /build/main .
+RUN cp /build/dns .
 
 # Build a small image
 FROM scratch
-COPY --from=builder /dist/main /
-ENTRYPOINT ["/main"]
+
+ENV DNS_PORT=8081 \
+    DNS_ENVIRONMENT=PRODUCTION \
+    DNS_LOG_LEVEL=INFO \
+    DNS_SECTOR_ID=1
+
+COPY --from=builder /dist/dns /
+
+ENTRYPOINT ["/dns"]
